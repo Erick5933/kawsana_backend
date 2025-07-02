@@ -166,3 +166,5 @@ class UsuarioInsignia(models.Model):
         usuario_str = str(self.usuario) if self.usuario else "Usuario desconocido"
         insignia_str = self.insignia.nombre if self.insignia else "Insignia desconocida"
         return f"{usuario_str} obtuvo {insignia_str} el {self.fecha_obtenida}"
+
+#hola
