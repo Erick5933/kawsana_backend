@@ -1,0 +1,57 @@
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de entorno / configuración
+.env
+*.env
+
+# Base de datos local (si usas SQLite)
+*.sqlite3
+
+# Archivos de log
+*.log
+
+# Archivos de migración vacíos o innecesarios
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+
+# Archivos de usuario o IDEs
+.vscode/
+.idea/
+*.swp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos generados por tests
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+test-results/
+
+# Git
+.gitattributes
+
+# Archivos estáticos recolectados (si usas collectstatic)
+staticfiles/
+static/
+
+# Archivos temporales
+tmp/
+*.tmp
+
+# Archivos del backend Django
+db.sqlite3
