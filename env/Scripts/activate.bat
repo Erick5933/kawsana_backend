@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\ec998\OneDrive\Documentos\PROYECTOS PRG\kawsana_Backend\env
+set VIRTUAL_ENV=C:\Users\Erick\Documents\kawsana_backend\env
 
 if not defined PROMPT set PROMPT=$P$G
 
