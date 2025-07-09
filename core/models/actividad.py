@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+
 from .proyecto import Proyecto
 
 class Actividad(models.Model):

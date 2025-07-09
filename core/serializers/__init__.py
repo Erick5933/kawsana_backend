@@ -3,11 +3,10 @@ from .proyecto_serializer import ProyectoSerializer
 from .actividad_serializer import ActividadSerializer
 from .evidencia_serializer import EvidenciaActividadSerializer
 from .progreso_barrio_serializer import ProgresoBarrioSerializer
-from .proyecto_barrio_serializer import ProyectoBarrioSerializer
-from .lider_proyecto_serializer import LiderProyectoSerializer
 from .barrio_serializer import BarrioSerializer
 from .usuario_serializer import UsuarioSerializer
 from .noticia_serializer import NoticiaSerializer
 from .reconocimiento_serializer import ReconocimientoResiduoSerializer
 from .insignia_serializer import InsigniaSerializer
 from .usuario_insignia_serializer import UsuarioInsigniaSerializer
+from .lider_proyecto_barrio_serializer import LiderProyectoBarrioSerializer

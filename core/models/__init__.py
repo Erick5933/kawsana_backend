@@ -5,9 +5,10 @@ from .organizacion import Organizacion
 from .proyecto import Proyecto
 from .actividad import Actividad
 from .evidencia import EvidenciaActividad
-from .progreso_barrio import ProgresoBarrio
-from .proyecto_barrio import ProyectoBarrio
-from .lider_proyecto import LiderProyecto
+from .lider_proyecto_barrio import LiderProyectoBarrio
 from .reconocimiento import ReconocimientoResiduo
 from .insignia import Insignia
 from .usuario_insignia import UsuarioInsignia
+from .ciudad import Ciudad
+from .parroquia import Parroquia
+from .progreso_barrio import ProgresoBarrio

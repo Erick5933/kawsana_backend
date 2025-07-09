@@ -8,9 +8,7 @@ from core.views.proyecto_view import ProyectoViewSet
 from core.views.actividad_view import ActividadViewSet
 from core.views.evidencia_view import EvidenciaActividadViewSet
 from core.views.progreso_barrio_view import ProgresoBarrioViewSet
-from core.views.proyecto_barrio_view import ProyectoBarrioViewSet
-from core.views.lider_proyecto_view import LiderProyectoViewSet
-
+from core.views.lider_proyecto_barrio_view import LiderProyectoBarrioViewSet  # CORREGIDO
 from core.views.barrio_view import BarrioViewSet
 from core.views.usuario_view import UsuarioViewSet
 from core.views.noticia_view import NoticiaViewSet
@@ -25,8 +23,7 @@ router.register(r'proyectos', ProyectoViewSet)
 router.register(r'actividades', ActividadViewSet)
 router.register(r'evidencias', EvidenciaActividadViewSet)
 router.register(r'progresos', ProgresoBarrioViewSet)
-router.register(r'proyectos-barrios', ProyectoBarrioViewSet)
-router.register(r'lideres-proyecto', LiderProyectoViewSet)
+router.register(r'lideres-proyecto-barrio', LiderProyectoBarrioViewSet)  # CORREGIDO
 
 router.register(r'barrios', BarrioViewSet)
 router.register(r'usuarios', UsuarioViewSet)

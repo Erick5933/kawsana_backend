@@ -10,3 +10,6 @@ class Noticia(models.Model):
 
     def __str__(self):
         return self.titulo or "Noticia sin título"
+
+
+
