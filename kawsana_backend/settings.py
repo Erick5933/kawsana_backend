@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import pymysql
 pymysql.install_as_MySQLdb()
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,6 +36,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'adrianacornejo.2005@gmail.com'
 EMAIL_HOST_PASSWORD = 'waidtwkkknclzqyg'  # Contraseña de aplicación generada en Google
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Application definition

@@ -55,3 +55,4 @@ tmp/
 
 # Archivos del backend Django
 db.sqlite3
+core/__pycache__/admin.cpython-311.pyc

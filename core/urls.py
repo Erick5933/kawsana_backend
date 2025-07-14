@@ -15,6 +15,10 @@ from core.views.noticia_view import NoticiaViewSet
 from core.views.reconocimiento_view import ReconocimientoResiduoViewSet
 from core.views.insignia_view import InsigniaViewSet
 from core.views.usuario_insignia_view import UsuarioInsigniaViewSet
+from django.conf import settings
+from django.conf.urls.static import static
+
+from core.views.estadisticas_view import EstadisticasView
 
 # Ruteo automático con ViewSets
 router = DefaultRouter()
@@ -35,4 +39,8 @@ router.register(r'usuarios-insignias', UsuarioInsigniaViewSet)
 # URLs finales
 urlpatterns = [
     path('', include(router.urls)),
+    path('estadisticas/', EstadisticasView.as_view(), name='estadisticas'),
+
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -11,6 +11,14 @@ class Usuario(models.Model):
         ("organizacion", "Organización"),
     ]
 
+    usuario = models.CharField(
+        max_length=30,
+        unique=True,
+        null=True,
+        blank=True,
+        help_text="Nombre de usuario único"
+    )
+
     email = models.EmailField(unique=True)
     contraseña = models.CharField(max_length=128)
     tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOICES)
@@ -33,4 +41,4 @@ class Usuario(models.Model):
     fecha_nacimiento = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.nombres} {self.apellidos} ({self.email})"
+        return f"{self.usuario} - {self.nombres} {self.apellidos} ({self.email})"
