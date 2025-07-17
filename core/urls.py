@@ -1,6 +1,8 @@
 # api/urls.py
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from core.views.LoginUsuarioView import LoginUsuarioView
+
 
 # Importaciones de views
 from core.views.organizacion_view import OrganizacionViewSet
@@ -35,11 +37,11 @@ router.register(r'noticias', NoticiaViewSet)
 router.register(r'reconocimientos', ReconocimientoResiduoViewSet)
 router.register(r'insignias', InsigniaViewSet)
 router.register(r'usuarios-insignias', UsuarioInsigniaViewSet)
-
 # URLs finales
 urlpatterns = [
     path('', include(router.urls)),
     path('estadisticas/', EstadisticasView.as_view(), name='estadisticas'),
+    path('login/', LoginUsuarioView.as_view(), name='login_usuario'),
 
 ]
 if settings.DEBUG:
