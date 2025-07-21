@@ -5,13 +5,11 @@ from .insignia import Insignia
 
 class UsuarioInsignia(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="insignias")
-    insignia = models.ForeignKey(Insignia, on_delete=models.CASCADE, related_name="usuarios")
-    fecha_obtenida = models.DateField(default=timezone.now)
+    insignia = models.ForeignKey(Insignia, on_delete=models.CASCADE)
+    fecha_asignacion = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        unique_together = ("usuario", "insignia")
+        unique_together = ('usuario', 'insignia')  # Evita duplicados
 
     def __str__(self):
-        usuario_str = str(self.usuario) if self.usuario else "Usuario desconocido"
-        insignia_str = self.insignia.nombre if self.insignia else "Insignia desconocida"
-        return f"{usuario_str} obtuvo {insignia_str} el {self.fecha_obtenida}"
+        return f"{self.usuario} - {self.insignia}"

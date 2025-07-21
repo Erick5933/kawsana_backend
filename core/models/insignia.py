@@ -1,9 +1,13 @@
 from django.db import models
+from datetime import date
+from django.utils import timezone
 
 class Insignia(models.Model):
-    nombre = models.CharField(max_length=100, unique=True)
-    descripcion = models.TextField(blank=True)
-    icono_url = models.URLField(blank=True)
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    puntos_necesarios = models.PositiveIntegerField(default=0)
+    icono = models.ImageField(upload_to='insignias/', default='insignias/insignia.png')
+    fecha_creacion = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.nombre or "Insignia sin nombre"
+        return self.nombre

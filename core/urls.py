@@ -37,6 +37,7 @@ router.register(r'noticias', NoticiaViewSet)
 router.register(r'reconocimientos', ReconocimientoResiduoViewSet)
 router.register(r'insignias', InsigniaViewSet)
 router.register(r'usuarios-insignias', UsuarioInsigniaViewSet)
+
 # URLs finales
 urlpatterns = [
     path('', include(router.urls)),
