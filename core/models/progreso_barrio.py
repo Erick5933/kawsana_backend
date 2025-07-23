@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
 from .proyecto import Proyecto
-from ..models.barrio import Barrio
+from .barrio import Barrio
 
 class ProgresoBarrio(models.Model):
     ultima_actualizacion = models.DateField(default=timezone.now)

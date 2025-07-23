@@ -39,6 +39,7 @@ class Usuario(models.Model):
     )
     direccion = models.CharField(max_length=255, blank=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
+    puntos = models.PositiveIntegerField(default=0)  # <- Agrega este campo
 
     def __str__(self):
         return f"{self.usuario} - {self.nombres} {self.apellidos} ({self.email})"

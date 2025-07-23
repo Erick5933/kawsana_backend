@@ -1,9 +1,9 @@
-# core/utils/insignias.py
-from core.models import Insignia, UsuarioInsignia
+from core.models import UsuarioInsignia, Insignia
 
 def verificar_insignias(usuario):
-    insignias = Insignia.objects.all()
+    insignias_ganadas = set(UsuarioInsignia.objects.filter(usuario=usuario).values_list("insignia_id", flat=True))
+    insignias_disponibles = Insignia.objects.all()
 
-    for insignia in insignias:
-        if usuario.puntos >= insignia.puntos_necesarios:
-            UsuarioInsignia.objects.get_or_create(usuario=usuario, insignia=insignia)
+    for insignia in insignias_disponibles:
+        if usuario.puntos >= insignia.puntos_necesarios and insignia.id not in insignias_ganadas:
+            UsuarioInsignia.objects.create(usuario=usuario, insignia=insignia)

@@ -2,6 +2,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from core.views.LoginUsuarioView import LoginUsuarioView
+from core.views import evidencia_view, usuario_view, insignia_view, usuario_insignia_view
 
 
 # Importaciones de views
@@ -24,19 +25,22 @@ from core.views.estadisticas_view import EstadisticasView
 
 # Ruteo automático con ViewSets
 router = DefaultRouter()
+
+router.register(r'evidencias', evidencia_view.EvidenciaActividadViewSet, basename='evidencia')
+router.register(r'usuarios', usuario_view.UsuarioViewSet)
+router.register(r'insignias', insignia_view.InsigniaViewSet)
+router.register(r'usuario-insignias', usuario_insignia_view.UsuarioInsigniaViewSet)
+
 router.register(r'organizaciones', OrganizacionViewSet)
 router.register(r'proyectos', ProyectoViewSet)
 router.register(r'actividades', ActividadViewSet)
-router.register(r'evidencias', EvidenciaActividadViewSet)
 router.register(r'progresos', ProgresoBarrioViewSet)
 router.register(r'lideres-proyecto-barrio', LiderProyectoBarrioViewSet)  # CORREGIDO
 
 router.register(r'barrios', BarrioViewSet)
-router.register(r'usuarios', UsuarioViewSet)
 router.register(r'noticias', NoticiaViewSet)
 router.register(r'reconocimientos', ReconocimientoResiduoViewSet)
-router.register(r'insignias', InsigniaViewSet)
-router.register(r'usuarios-insignias', UsuarioInsigniaViewSet)
+
 
 # URLs finales
 urlpatterns = [

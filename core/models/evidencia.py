@@ -16,11 +16,11 @@ class EvidenciaActividad(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="evidencias")
     archivo = models.FileField(upload_to=evidencia_upload_path, null=True, blank=True)
     descripcion = models.TextField(blank=True)
-    fecha_subida = models.DateField(default=timezone.now)
+    fecha_subida = models.DateTimeField(default=timezone.now)  # DateTime para precisión
     actividad = models.ForeignKey(Actividad, on_delete=models.CASCADE, related_name="evidencias")
     es_valida = models.BooleanField(default=False)
     validador = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True, blank=True, related_name="evidencias_validadas")
-    fecha_validacion = models.DateField(null=True, blank=True)
+    fecha_validacion = models.DateTimeField(default=timezone.now)  # DateTime para precisión
     puntos = models.PositiveIntegerField(default=0)
 
     def __str__(self):
