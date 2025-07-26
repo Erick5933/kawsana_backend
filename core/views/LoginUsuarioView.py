@@ -44,5 +44,7 @@ class LoginUsuarioView(APIView):
             'tipo_usuario': user.tipo_usuario,
             'id_usuario': user.id,
             'nombres': user.nombres,
-            'apellidos': user.apellidos
+            'apellidos': user.apellidos,
+'barrio': user.barrio.id if user.barrio else None,
+
         }, status=status.HTTP_200_OK)
