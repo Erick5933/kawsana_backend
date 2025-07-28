@@ -4,4 +4,4 @@ from core.models import LiderProyectoBarrio
 class LiderProyectoBarrioSerializer(serializers.ModelSerializer):
     class Meta:
         model = LiderProyectoBarrio
-        fields = '__all__'
+        fields = ['id', 'usuario', 'proyecto', 'barrio']

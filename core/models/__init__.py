@@ -12,4 +12,3 @@ from .usuario_insignia import UsuarioInsignia
 from .ciudad import Ciudad
 from .parroquia import Parroquia
 from .progreso_barrio import ProgresoBarrio
-from .usuario_proyecto import UsuarioProyecto

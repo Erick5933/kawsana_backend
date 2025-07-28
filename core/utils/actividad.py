@@ -1,21 +1,14 @@
-from core.models import Usuario, LiderProyectoBarrio
+from core.models import Usuario, UsuarioInsignia
 from core.utils.insignias import verificar_insignias
 
-def completar_actividad(actividad, usuario_lider):
-    try:
-        # Obtener la relación líder-proyecto-barrio
-        lider_barrio = LiderProyectoBarrio.objects.get(
-            usuario=usuario_lider,
-            proyecto=actividad.proyecto
-        )
-        barrio = lider_barrio.barrio
-    except LiderProyectoBarrio.DoesNotExist:
+
+def completar_actividad(actividad):
+    barrio = actividad.proyecto.barrio_set.first()
+    if not barrio:
         return
 
-    # Obtener todos los usuarios del mismo barrio
-    usuarios_barrio = Usuario.objects.filter(barrio=barrio)
-
-    for usuario in usuarios_barrio:
+    usuarios = Usuario.objects.filter(barrio=barrio)
+    for usuario in usuarios:
         usuario.puntos += actividad.puntos
         usuario.save()
         verificar_insignias(usuario)
