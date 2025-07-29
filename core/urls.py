@@ -17,12 +17,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from core.views.insignias_por_usuario_view import InsigniasPorUsuarioView
 
+from core.views.parroquia_view import ParroquiaViewSet
 
 from core.views.estadisticas_view import EstadisticasView
 
 # Ruteo automático con ViewSets
 router = DefaultRouter()
-
+router.register(r'parroquia', ParroquiaViewSet)
 router.register(r'evidencias', EvidenciaActividadViewSet)
 router.register(r'usuarios', usuario_view.UsuarioViewSet)
 router.register(r'insignias', insignia_view.InsigniaViewSet)
