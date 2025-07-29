@@ -95,9 +95,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kawsana_db',       # El nombre de tu base en MySQL
-        'USER': 'root',             # Tu usuario de MySQL
-        'PASSWORD': '1234',# Tu contraseña
-        'HOST': 'localhost',        # O el host de tu servidor de BD
+        'USER': 'admin',             # Tu usuario de MySQL
+        'PASSWORD': 'kawsana1234',# Tu contraseña
+        'HOST': 'kawsana.ccz2262m6wg3.us-east-1.rds.amazonaws.com',        # O el host de tu servidor de BD
         'PORT': '3306',             # Puerto por defecto de MySQL
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
