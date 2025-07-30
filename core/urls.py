@@ -48,7 +48,6 @@ urlpatterns = [
     path('login/', LoginUsuarioView.as_view(), name='login_usuario'),
     path('usuarios/<int:pk>/proyectos-barrio/', usuario_proyectos_barrio, name='usuario-proyectos-barrio'),
     path('usuarios/<int:usuario_id>/insignias-desbloqueadas/', InsigniasPorUsuarioView.as_view(), name='insignias-por-usuario'),
-
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
